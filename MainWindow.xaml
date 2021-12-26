@@ -1,0 +1,247 @@
+﻿<Window x:Class="大作业视频播放器.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:大作业视频播放器"
+        mc:Ignorable="d"
+  Title="视频播放器" Height="625.6" Width="1020.251" Background="#211E1E" Foreground="White" KeyDown="MediaElement_KeyDown_ESC" >
+    <Viewbox >
+        <Grid>
+            <Grid.Resources>
+
+                <Style x:Key="btnStyle" TargetType="Button">
+
+                    <Setter Property="Background">
+
+                        <Setter.Value>
+
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+
+                                <GradientStop Offset="0" Color="#3C4144"/>
+
+                                <GradientStop Offset="0.5" Color="#666A6E"/>
+
+                            </LinearGradientBrush>
+
+                        </Setter.Value>
+
+                    </Setter>
+
+                    <Setter Property="FontStyle" Value="Italic"/>
+
+                    <Setter Property="FontFamily" Value="黑体" />
+
+                    <Setter Property="Margin" Value="5"/>
+
+                    <Setter Property="Width" Value="65"/>
+
+                    <Setter Property="Foreground" Value="White"/>
+
+                    <Style.Triggers>
+
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+
+                            <Setter Property="Foreground" Value="#222425"/>
+
+                        </Trigger>
+
+                    </Style.Triggers>
+
+                </Style>
+
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="257*"/>
+                <ColumnDefinition Width="167*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.ColumnSpan="3" Margin="0,0,0.2,-0.2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="cd" Width="154"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid x:Name="ListMenu" Background="#070607" Focusable="False" Margin="0,-21,-0.4,-18.2">
+                        <ListBox x:Name="mediaList" Background ="#8E8E8E" MouseDoubleClick="listBox_MouseDoubleClick" MouseRightButtonDown="mediaList_MouseRightButtonDown" Margin="0,0,0.8,35.8"  >
+
+                            <ListBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Name="Menu1" Header="播放" IsEnabled="False" Click="Menu1_Click"/>
+                                    <MenuItem Name="Menu2" Header="删除" IsEnabled="False" Click="Menu2_Click"/>
+                                    <MenuItem Name="Menu5" Header="书签" IsEnabled="False" >
+                                        <MenuItem Name="MenuMark_1" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_1"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_1"/>
+                                            <MenuItem Header="清除" Click =" bookmark_Delete_Click_1 "/>
+                                            <MenuItem Header="注释" Click="bookmark_Anno_Click_1"/>
+                                        </MenuItem>
+                                        <MenuItem Name="MenuMark_2" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_2"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_2"/>
+                                            <MenuItem Header="清除" Click="bookmark_Delete_Click_2"/>
+                                            <MenuItem Header="注释" Click="bookmark_Anno_Click_2"/>
+                                        </MenuItem>
+                                        <MenuItem Name="MenuMark_3" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_3"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_3"/>
+                                            <MenuItem Header="清除" Click="bookmark_Delete_Click_3"/>
+                                            <MenuItem Header="注释" Click="bookmark_Anno_Click_3"/>
+                                        </MenuItem>
+                                        <MenuItem Name="MenuMark_4" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_4"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_4"/>
+                                            <MenuItem Header="清除" Click="bookmark_Delete_Click_4"/>
+                                            <MenuItem Header="注释" Click="bookmark_Anno_Click_4"/>
+                                        </MenuItem>
+                                        <MenuItem Name="MenuMark_5" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_5"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_5"/>
+                                            <MenuItem Header="清除" Click="bookmark_Delete_Click_5"/>
+                                            <MenuItem Header="注释" Click ="bookmark_Anno_Click_5"/>
+                                        </MenuItem>
+                                        <MenuItem Name="MenuMark_6" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_6"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_6"/>
+                                            <MenuItem Header="清除"  Click="bookmark_Delete_Click_6"/>
+                                            <MenuItem Header="注释" Click="bookmark_Anno_Click_6"/>
+                                        </MenuItem>
+                                        <MenuItem Name="MenuMark_7" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_7"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_7"/>
+                                            <MenuItem Header="清除" Click="bookmark_Delete_Click_7"/>
+                                            <MenuItem Header="注释" Click="bookmark_Anno_Click_7"/>
+                                        </MenuItem>
+                                        <MenuItem Name="MenuMark_8" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_8"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_8"/>
+                                            <MenuItem Header="清除" Click="bookmark_Delete_Click_8"/>
+                                            <MenuItem Header="注释" Click="bookmark_Anno_Click_8"/>
+                                        </MenuItem>
+                                        <MenuItem Name="MenuMark_9" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_9"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_9"/>
+                                            <MenuItem Header="清除" Click="bookmark_Delete_Click_9"/>
+                                            <MenuItem Header="注释" Click="bookmark_Anno_Click_9"/>
+                                        </MenuItem>
+                                        <MenuItem Name="MenuMark_10" Header="书签" IsEnabled="False">
+                                            <MenuItem Header="使用" Click="bookmark_Use_Click_10"/>
+                                            <MenuItem Header="删除" Click="Mark_Clear__Click_10"/>
+                                            <MenuItem Header="清除" Click="bookmark_Delete_Click_10"/>
+                                            <MenuItem Header="注释" Click ="bookmark_Anno_Click_10"/>
+                                        </MenuItem>
+                                    </MenuItem>
+                                    <MenuItem Name="Menu3" Header="打开" IsEnabled="False" Click="Menu3_Click"/>
+                                    <MenuItem Name="Menu4" Header="排序" IsEnabled="False" Click="Menu4_Click"/>
+                                </ContextMenu>
+                            </ListBox.ContextMenu>
+                        </ListBox>
+                        <Button x:Name="lastscreen" Content="上一个" Style="{StaticResource btnStyle}" Margin="0,541,78.8,-0.2" Width="Auto" Click="lastscreen_Click" />
+                        <Button x:Name="nextscreen" Content="下一个" Style="{StaticResource btnStyle}" Margin="76,541,-0.2,-0.2" Width="Auto" Click="nextscreen_Click" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1" Background="#211E1E" Margin="0.4,0,0,-50" Height="577" VerticalAlignment="Bottom">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="123*"/>
+
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="36"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid  Background="#211E1E" Margin="0,0,0,0.2" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Border Margin="-2,209,8,292.8" Opacity="0.5"  Background="#8E8E8E" 
+                        MouseLeftButtonDown="No_MouseLeftButtonDown" ToolTip="展开">
+                            <Border Height="22" Width="22">
+                                <Border.Background>
+                                    <ImageBrush ImageSource="D:\VS\Projects\大作业视频播放器\大作业视频播放器\bin\Debug\whatever.png"/>
+                                </Border.Background>
+                            </Border>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Column="1" Margin="0,0,-0.2,0.6" Grid.RowSpan="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel  Margin="10,0,10.6,0" Grid.RowSpan="2">
+
+                            <Border x:Name="pBorder" BorderThickness="3" Background="Black" Height="439" Margin="102,0,82.6,0">
+
+                                <Border.BorderBrush>
+
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+
+                                        <GradientStop Offset="0" Color="#3C4144"/>
+
+                                        <GradientStop Offset="0.5" Color="#222425"/>
+
+                                    </LinearGradientBrush>
+
+                                </Border.BorderBrush>
+
+                                <MediaElement MediaEnded="mediaElement_MediaEnded" Name="mediaElement" Opacity="1" ScrubbingEnabled="True" MediaOpened="mediaElement_MediaOpened" Volume="{Binding ElementName=volumeSlider, Path=Value}" UnloadedBehavior="Stop" Stretch="Fill" LoadedBehavior="Manual" Margin="6.8,20.8,6.6,22" MouseLeftButtonDown="mediaElement_MouseLeftButtonDown"  />
+
+                            </Border>
+                            <Slider x:Name="timelineSlider" Margin="136,5,109.8,5" Width="623" HorizontalAlignment="Center" PreviewMouseUp="timelineSlider_ValueChanged_MouseUP" Height="16"  />
+
+
+                            <TextBlock Width="110" x:Name="txtTime" Margin="348,0,334.8,0"/>
+
+                            <TextBlock Width="96" x:Name="totalTime" Foreground="White" Margin="355,0,341.8,0" />
+
+                            <StackPanel x:Name="aStackPanel"  Orientation="Horizontal" Height="40" HorizontalAlignment="Center" Margin="148,0,124.8,0">
+
+                                <Button x:Name="openBtn" Content="选择视频" Style="{StaticResource btnStyle}" Click="OpenBtn_Click"/>
+
+                                <Button x:Name="playBtn" Content="播放" Style="{StaticResource btnStyle}" Click="playBtn_Click" IsEnabled="False"/>
+
+                                <Button x:Name="pauseBtn" Content="暂停" Style="{StaticResource btnStyle}" Click="pauseBtn_Click" IsEnabled="False"/>
+                                <Button x:Name="stopBtn" Content="停止" Style="{StaticResource btnStyle}" Click="stopBtn_Click" IsEnabled="False"/>
+
+                                <Button x:Name="backBtn" Content="后退" Style="{StaticResource btnStyle}" Click="backBtn_Click" IsEnabled="False"/>
+
+                                <Button x:Name="forwardBtn" Content="前进" Style="{StaticResource btnStyle}" Click="forwardBtn_Click" IsEnabled="False"/>
+
+
+                                <Button x:Name="fullscreen" Content="全屏" Style="{StaticResource btnStyle}" Click="mediaElement_MouseClick" IsEnabled="True" />
+
+
+                            </StackPanel>
+
+                            <StackPanel x:Name="bStackPanel" Orientation="Horizontal" HorizontalAlignment="Center" Margin="187,3,158.6,3" Width="524">
+
+                                <TextBlock Text="音量:" Foreground="White" Margin="3" VerticalAlignment="Center"/>
+
+                                <Slider x:Name="volumeSlider" Minimum="0" VerticalAlignment="Center" Maximum="1" Value="0.5" Width="150" Margin="3"/>
+
+                                <TextBlock Text="时间:" VerticalAlignment="Center" Margin="0 0 5 0"/>
+
+                                <TextBox Height="23" Name="textBox1" Width="30" Margin="0 0 5 0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                                <TextBlock Text="秒" VerticalAlignment="Center"/>
+
+                                <Button Height="23" Name="LocationBtn" Width="45" Margin="10" Style="{StaticResource btnStyle}" Click="LocationBtn_Click">跳转</Button>
+
+                                <Button Height="23" Name="IsMutedBtn" Width="45" Margin="10" Style="{StaticResource btnStyle}" Click="IsMutedBtn_Click">静音</Button>
+
+                                <Button x:Name="bookmarkBtn" Content="书签" Width="45" Margin="10" Style="{StaticResource btnStyle}"   Click="bookmarkBtn_Click"/>
+
+                                <Button Height="23" Name="SreemShotBtn" Width="45" Margin="10" Style="{StaticResource btnStyle}" Click ="SreemShotBtn_Click">截图</Button>
+
+                            </StackPanel>
+
+
+                        </StackPanel>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Window>
